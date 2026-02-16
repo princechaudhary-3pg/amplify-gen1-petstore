@@ -18,7 +18,7 @@ import {
   View,
 } from "@aws-amplify/ui-react";
 export default function ReviewCard(props) {
-  const { overrides, ...rest } = props;
+  const { pet, overrides, ...rest } = props;
   return (
     <Flex
       gap="0"
@@ -43,6 +43,7 @@ export default function ReviewCard(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         objectFit="cover"
+        src={pet?.image}
         {...getOverrideProps(overrides, "image")}
       ></Image>
       <Flex
@@ -171,7 +172,7 @@ export default function ReviewCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="Classic Long Sleeve T-Shirt"
+            children={pet?.name}
             {...getOverrideProps(overrides, "Classic Long Sleeve T-Shirt")}
           ></Text>
         </Flex>
@@ -216,7 +217,7 @@ export default function ReviewCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="Information about this product."
+            children={`${"About: "}${pet?.about}`}
             {...getOverrideProps(
               overrides,
               "Information about this product.29766836"
@@ -242,7 +243,7 @@ export default function ReviewCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="Information about this product."
+            children={`${"Color: "}${pet?.color}`}
             {...getOverrideProps(
               overrides,
               "Information about this product.29766837"
@@ -255,7 +256,7 @@ export default function ReviewCard(props) {
           shrink="0"
           size="small"
           variation="default"
-          children="New!"
+          children={`${"Breed: "}${pet?.breed}`}
           {...getOverrideProps(overrides, "Badge")}
         ></Badge>
         <Flex
@@ -333,7 +334,7 @@ export default function ReviewCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="$99/Night"
+            children={`${"Age: "}${pet?.age}`}
             {...getOverrideProps(overrides, "$99/Night")}
           ></Text>
         </Flex>

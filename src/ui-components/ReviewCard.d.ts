@@ -5,6 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
+import { Pet } from "../models";
 import { BadgeProps, DividerProps, FlexProps, IconProps, ImageProps, RatingProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -39,6 +40,8 @@ export declare type ReviewCardOverridesProps = {
     "$99/Night"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type ReviewCardProps = React.PropsWithChildren<Partial<FlexProps> & {
+    pet?: Pet;
+} & {
     overrides?: ReviewCardOverridesProps | undefined | null;
 }>;
 export default function ReviewCard(props: ReviewCardProps): React.ReactElement;
